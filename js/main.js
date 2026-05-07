@@ -19,10 +19,6 @@ document.querySelectorAll('.about-item').forEach((item, i) => {
   item.classList.add(`about-item--${CYCLE[i % 3]}`);
 });
 
-document.querySelectorAll('.testimonial-card').forEach((card, i) => {
-  card.classList.add(`testimonial-card--${CYCLE[i % 3]}`);
-});
-
 
 /* --- Footer year --- */
 const yearEl = document.getElementById('year');
