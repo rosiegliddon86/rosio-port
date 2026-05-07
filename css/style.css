@@ -460,6 +460,13 @@ body {
   position: relative;
 }
 
+@media (min-width: 1601px) {
+  .page-frame {
+    overflow-x: visible;
+    box-shadow: -6px 3px 0 0 var(--black), 6px 3px 0 0 var(--black);
+  }
+}
+
 img, svg { display: block; max-width: 100%; }
 ul, ol   { list-style: none; }
 address  { font-style: normal; }
@@ -556,6 +563,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   align-items: center;
   align-self: flex-start;
   padding: 0.85rem 2rem;
+  min-height: 44px;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.72rem;
@@ -577,6 +585,21 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   background: var(--accent-dark);
   border-color: var(--accent-dark);
   color: var(--white);
+  outline: none;
+}
+
+.btn--cta-email {
+  background: var(--yellow);
+  color: var(--black);
+  border-color: var(--yellow);
+  margin-top: var(--space-lg);
+}
+
+.btn--cta-email:hover,
+.btn--cta-email:focus-visible {
+  background: transparent;
+  color: var(--yellow);
+  border-color: var(--yellow);
   outline: none;
 }
 
@@ -847,7 +870,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
     "content"
     "image";
   grid-template-rows: auto 1fr;
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-md);
   gap: var(--space-md);
 }
 
@@ -891,7 +914,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
     Mobile: give the container a fixed height so the img's
     height: 100% resolves correctly (% needs a defined parent height).
   */
-  height: 300px;
+  height: 380px;
   overflow: hidden;
 }
 
@@ -959,8 +982,12 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
    ============================================================= */
 
 .section {
-  padding: var(--space-xl) 0;
+  padding: var(--space-lg) 0;
   border-bottom: var(--border-lg);
+}
+
+@media (min-width: 768px) {
+  .section { padding: var(--space-xl) 0; }
 }
 
 /* The centred content wrapper — matches across every section */
@@ -1002,13 +1029,29 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 
 .offer-layout {
   display: grid;
-  grid-template-columns: 1fr 60px;
+  grid-template-columns: 1fr 4px;
   gap: 0;
 }
+
+.offer-accent-block--image { display: none; }
 
 @media (min-width: 768px) {
   .offer-layout {
     grid-template-columns: 1fr 280px;
+  }
+
+  .offer-accent-col {
+    border: var(--border-lg);
+    min-height: 480px;
+  }
+
+  .offer-accent-block--image {
+    display: block;
+  }
+
+  .offer-body {
+    padding-right: var(--space-lg);
+    padding-left: 0;
   }
 }
 
@@ -1021,8 +1064,6 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 .offer-accent-col {
   display: flex;
   flex-direction: column;
-  border: var(--border-lg);
-  min-height: 480px;
 }
 
 .offer-accent-block {
@@ -1049,8 +1090,8 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  padding-right: var(--space-lg);
-  padding-left: 0;
+  padding-left: var(--space-md);
+  padding-right: var(--space-sm);
 }
 
 
@@ -1091,7 +1132,6 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   font-style: italic;
   font-size: 1.1rem;
   color: var(--grey-dark);
-  margin-bottom: var(--space-sm);
 }
 
 
@@ -1116,6 +1156,8 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   gap: 0;
 }
 
+.about-accent-block--image { display: none; }
+
 @media (min-width: 768px) {
   .about-layout {
     grid-template-columns: 280px 1fr;
@@ -1124,11 +1166,19 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   .about-accent-col {
     grid-column: 1;
     grid-row: 1;
+    border: var(--border-lg);
+    min-height: 480px;
+  }
+
+  .about-accent-block--image {
+    display: block;
   }
 
   .about-body {
     grid-column: 2;
     grid-row: 1;
+    padding-left: var(--space-lg);
+    padding-right: 0;
   }
 }
 
@@ -1141,8 +1191,6 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 .about-accent-col {
   display: flex;
   flex-direction: column;
-  border: var(--border-lg);
-  min-height: 480px;
 }
 
 .about-accent-block {
@@ -1167,8 +1215,8 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  padding-left: var(--space-lg);
-  padding-right: 0;
+  padding-left: var(--space-md);
+  padding-right: var(--space-sm);
 }
 
 .about-list {
@@ -1203,42 +1251,6 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   margin-bottom: 0.3rem;
 }
 
-@media (max-width: 767px) {
-  .offer-layout {
-    grid-template-columns: 1fr 4px;
-  }
-
-  .about-layout {
-    grid-template-columns: 1fr 4px;
-  }
-
-  .offer-accent-col,
-  .about-accent-col {
-    border: none;
-    min-width: 0;
-  }
-
-  .offer-accent-block--image,
-  .about-accent-block--image {
-    display: none;
-  }
-
-  .offer-accent-block,
-  .about-accent-block {
-    border: none;
-    min-width: 0;
-  }
-
-  .offer-body {
-    padding-left: var(--space-md);
-    padding-right: var(--space-sm);
-  }
-
-  .about-body {
-    padding-left: var(--space-md);
-    padding-right: var(--space-sm);
-  }
-}
 
 
 /* =============================================================
@@ -1264,7 +1276,6 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 
 .credential-card {
   display: block;
-  gap: var(--space-md);
   padding: 1.25rem 0 1.25rem var(--space-sm);
   border-left: 4px solid transparent;
   border-bottom: 1px solid rgba(28, 24, 21, 0.12);
@@ -1338,7 +1349,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 .section--contact .section-title { color: var(--white); }
 
 .contact-intro {
-  color: rgba(248, 244, 238, 0.65);
+  color: rgba(248, 244, 238, 0.75);
   margin-bottom: var(--space-lg);
   font-size: 1.05rem;
   max-width: 50ch;
@@ -1401,7 +1412,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 .contact-ethics {
   margin-top: var(--space-md);
   font-size: 0.72rem;
-  color: rgba(248, 244, 238, 0.45);
+  color: rgba(248, 244, 238, 0.6);
   max-width: 44ch;
 }
 
@@ -1542,4 +1553,19 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   .btn--primary       { border: 2px solid ButtonText; }
   .offer-list li      { border-left-color: Highlight; }
   .credential-card    { border-left-color: Highlight; }
+}
+
+
+/* =============================================================
+   LARGE SCREEN FRAMING (> 1600px)
+   box-shadow provides the side borders without inset content area.
+   site-header::before extends to cover the shadow at the very top
+   so the red accent strip runs edge-to-edge above the borders.
+   ============================================================= */
+
+@media (min-width: 1601px) {
+  .site-header::before {
+    left: -6px;
+    right: -6px;
+  }
 }

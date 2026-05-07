@@ -67,13 +67,12 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 if (!prefersReducedMotion) {
   const revealTargets = document.querySelectorAll(
-    '.credential-card, .offer-item, .about-item, .contact-item, .testimonial-card, .section-header'
+    '.credential-card, .offer-item, .about-item, .contact-item, .section-header'
   );
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Stagger list items using their index
         const delay = entry.target.dataset.revealDelay || 0;
         setTimeout(() => {
           entry.target.classList.add('is-visible');
@@ -86,11 +85,13 @@ if (!prefersReducedMotion) {
     rootMargin: '0px 0px -40px 0px',
   });
 
-  revealTargets.forEach((el, i) => {
+  revealTargets.forEach((el) => {
     el.classList.add('reveal');
-    // Stagger items within lists
-    if (el.closest('.credential-list') || el.closest('.offer-list') || el.closest('.about-list')) {
-      el.dataset.revealDelay = (i % 10) * 80;
+    const list = el.closest('.credential-list, .offer-list, .about-list');
+    if (list) {
+      const siblings = list.querySelectorAll('.credential-card, .offer-item, .about-item');
+      const listIndex = Array.from(siblings).indexOf(el);
+      el.dataset.revealDelay = listIndex * 80;
     }
     revealObserver.observe(el);
   });
@@ -108,7 +109,7 @@ if (sections.length && navLinks.length) {
         navLinks.forEach(link => {
           const isActive = link.getAttribute('href') === `#${id}`;
           if (isActive) {
-            link.setAttribute('aria-current', 'page');
+            link.setAttribute('aria-current', 'true');
           } else {
             link.removeAttribute('aria-current');
           }
@@ -138,6 +139,8 @@ if (header) {
   // Observe a sentinel element just below the top
   const sentinel = document.createElement('div');
   sentinel.style.cssText = 'position:absolute;top:1px;height:1px;width:1px;pointer-events:none;';
+  sentinel.setAttribute('aria-hidden', 'true');
+  sentinel.setAttribute('role', 'presentation');
   document.body.prepend(sentinel);
   scrollObserver.observe(sentinel);
 }
