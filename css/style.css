@@ -1483,11 +1483,25 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 }
 
 .footer-bacp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.footer-bacp-wrap {
   background: var(--white);
   padding: 4px 8px;
   display: inline-flex;
   align-items: center;
-  flex-shrink: 0;
+}
+
+.footer-reg {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(248, 244, 238, 0.55);
+  max-width: none;
 }
 
 .footer-bacp-logo {
