@@ -4,6 +4,8 @@
 
 'use strict';
 
+document.documentElement.classList.add('js');
+
 /* --- Colour accent cycling --- */
 const CYCLE = ['blue', 'accent', 'yellow'];
 

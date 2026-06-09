@@ -623,10 +623,16 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 
 /* Scroll reveal */
 .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js .reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 
@@ -1416,6 +1422,14 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   max-width: 44ch;
 }
 
+.contact-crisis {
+  margin-top: var(--space-sm);
+  font-size: 0.72rem;
+  color: rgba(248, 244, 238, 0.55);
+  max-width: 44ch;
+  line-height: 1.5;
+}
+
 /* Decorative Mondrian panel — desktop only */
 .contact-mondrian-wrap {
   display: none;
@@ -1493,6 +1507,17 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   max-width: none;
 }
 
+.footer-link {
+  color: rgba(248, 244, 238, 0.85);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--white);
+}
+
 .footer-bacp {
   display: inline-flex;
   align-items: center;
@@ -1532,6 +1557,45 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 
 
 /* =============================================================
+   LEGAL PAGES
+   ============================================================= */
+
+.legal-page {
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+}
+
+.legal-inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.legal-inner h1 {
+  margin-bottom: 0.5rem;
+}
+
+.legal-updated {
+  font-size: 0.85rem;
+  color: var(--grey);
+  margin-bottom: var(--space-md);
+}
+
+.legal-inner h2 {
+  margin-top: var(--space-md);
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+}
+
+.legal-inner p,
+.legal-inner li {
+  margin-bottom: 0.75rem;
+}
+
+.legal-inner .btn {
+  margin-top: var(--space-md);
+}
+
+
+/* =============================================================
    REDUCED MOTION
    ============================================================= */
 
@@ -1541,7 +1605,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
     transition-duration: 0.01ms !important;
   }
   html          { scroll-behavior: auto; }
-  .reveal       { opacity: 1; transform: none; transition: none; }
+  .js .reveal   { opacity: 1; transform: none; transition: none; }
 }
 
 

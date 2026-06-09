@@ -5,17 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rosie Gliddon Therapy — relational and psychodynamic therapy for high-performing professionals. Online therapy for stress, burnout, anxiety, and relationships. London and worldwide.">
   <meta name="theme-color" content="#1C1815">
-  <title>Rosie Gliddon | Online Therapist for Professionals | London</title>
+  <title>Rosie Gliddon | Therapy for High-Performing Professionals | London</title>
 
-  <meta property="og:title" content="Rosie Gliddon Therapy — Specialist Therapy for High Performing Professionals">
+  <meta property="og:title" content="Rosie Gliddon | Therapy for High-Performing Professionals | London">
   <meta property="og:description" content="Relational and psychodynamic therapy for high-performing professionals. Online therapy for stress, burnout, anxiety, and relationships. London and worldwide.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rosiegliddon.com/">
-  <meta property="og:image" content="https://rosiegliddon.com/assets/rosie3.jpg">
+  <meta property="og:site_name" content="Rosie Gliddon Therapy">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://rosiegliddon.com/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rosie Gliddon, BACP registered psychotherapist offering online therapy for professionals">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rosie Gliddon Therapy">
-  <meta name="twitter:description" content="Online therapy for high-performing professionals. Relational and psychodynamic. London and worldwide.">
-  <meta name="twitter:image" content="https://rosiegliddon.com/assets/rosie3.jpg">
+  <meta name="twitter:title" content="Rosie Gliddon | Therapy for High-Performing Professionals | London">
+  <meta name="twitter:description" content="Relational and psychodynamic therapy for high-performing professionals. Online therapy for stress, burnout, anxiety, and relationships. London and worldwide.">
+  <meta name="twitter:image" content="https://rosiegliddon.com/assets/og-image.jpg">
   <link rel="canonical" href="https://rosiegliddon.com/">
 
   <link rel="preload" as="image" href="assets/rosie3.jpg">
@@ -24,12 +29,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hiJ-Ek-_EeA.woff2">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://rosiegliddon.com/#website",
+        "url": "https://rosiegliddon.com",
+        "name": "Rosie Gliddon Therapy",
+        "publisher": { "@id": "https://rosiegliddon.com/#business" }
+      },
       {
         "@type": "Person",
         "@id": "https://rosiegliddon.com/#rosie",
@@ -38,14 +51,18 @@
         "description": "BACP registered psychotherapist specialising in relational and psychodynamic therapy for high-performing professionals.",
         "url": "https://rosiegliddon.com",
         "email": "rosie@rosiegliddon.com",
+        "image": "https://rosiegliddon.com/assets/rosie3.jpg",
         "memberOf": {
           "@type": "Organization",
           "name": "British Association for Counselling and Psychotherapy",
           "url": "https://www.bacp.co.uk"
-        }
+        },
+        "sameAs": [
+          "https://www.bacp.co.uk"
+        ]
       },
       {
-        "@type": ["LocalBusiness", "HealthAndBeautyBusiness"],
+        "@type": ["ProfessionalService", "MedicalBusiness"],
         "@id": "https://rosiegliddon.com/#business",
         "name": "Rosie Gliddon Therapy",
         "description": "Relational and psychodynamic therapy for high-performing professionals. Online therapy for stress, burnout, anxiety, and relationships. London and worldwide.",
@@ -53,6 +70,11 @@
         "email": "rosie@rosiegliddon.com",
         "image": "https://rosiegliddon.com/assets/rosie3.jpg",
         "priceRange": "££",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "BACP Registration Number",
+          "value": "418951"
+        },
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "London",
@@ -61,14 +83,30 @@
         "areaServed": [
           { "@type": "City", "name": "London" },
           { "@type": "Country", "name": "United Kingdom" },
-          "Worldwide"
+          { "@type": "Place", "name": "Worldwide" }
         ],
         "founder": { "@id": "https://rosiegliddon.com/#rosie" },
         "knowsAbout": [
           "Psychotherapy", "Psychodynamic therapy", "Relational therapy",
           "Burnout", "Anxiety", "Stress", "Depression", "Attachment",
           "Imposter syndrome", "Career change", "Online therapy"
-        ]
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Therapy services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Online psychotherapy session",
+                "description": "50-minute relational and psychodynamic therapy session via video call"
+              },
+              "price": "150",
+              "priceCurrency": "GBP"
+            }
+          ]
+        }
       }
     ]
   }
@@ -148,10 +186,11 @@
         <figure class="hero-image-wrap">
           <img
             src="assets/rosie3.jpg"
-            alt="Rosie Gliddon, therapist"
+            alt="Rosie Gliddon, BACP registered psychotherapist offering online therapy for professionals in London"
             class="hero-photo"
             width="1400"
             height="1400"
+            fetchpriority="high"
           >
         </figure>
 
@@ -362,6 +401,8 @@
           <a href="mailto:rosie@rosiegliddon.com?subject=Therapy%20Enquiry" class="btn btn--cta-email">Send me a message</a>
 
           <p class="contact-ethics">I am a BACP registered therapist and work within their ethical framework.</p>
+
+          <p class="contact-crisis">If you are in crisis or need immediate support, please call <strong>999</strong> in an emergency, or contact the Samaritans on <strong>116 123</strong> (free, 24 hours).</p>
         </div>
 
         <!-- Decorative Mondrian panel — hidden from assistive technology -->
@@ -385,7 +426,7 @@
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <p class="footer-name">Rosie Gliddon Therapy</p>
-      <p class="footer-note">&copy; <span id="year"></span> Rosie Gliddon. All rights reserved.</p>
+      <p class="footer-note">&copy; <span id="year"></span> Rosie Gliddon. All rights reserved. <a href="privacy.html" class="footer-link">Privacy Policy</a></p>
       <div class="footer-bacp">
         <span class="footer-bacp-wrap">
           <img
