@@ -1,0 +1,5 @@
+# Claude / Cursor local settings
+.claude/
+
+# OS / editor noise
+.DS_Store
