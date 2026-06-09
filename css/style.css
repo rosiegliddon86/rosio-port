@@ -1560,10 +1560,6 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
    LEGAL PAGES
    ============================================================= */
 
-.section--legal-intro {
-  background: linear-gradient(155deg, var(--off-white) 0%, var(--white) 45%);
-}
-
 .legal-intro-header {
   display: flex;
   flex-direction: column;
@@ -1583,12 +1579,13 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   padding-left: calc(5px + var(--space-sm));
   border-left: 4px solid var(--blue);
   margin-left: 0;
+  margin-bottom: var(--space-lg);
   color: var(--grey-dark);
   font-size: 1.05rem;
 }
 
 .section--legal {
-  background: var(--off-white);
+  background: var(--white);
 }
 
 .legal-layout {
