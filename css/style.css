@@ -1415,19 +1415,19 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
   margin-top: 0.15rem;
 }
 
-.contact-ethics {
-  margin-top: var(--space-md);
+.contact-ethics,
+.contact-crisis {
   font-size: 0.72rem;
   color: rgba(248, 244, 238, 0.6);
   max-width: 44ch;
 }
 
+.contact-ethics {
+  margin-top: var(--space-md);
+}
+
 .contact-crisis {
   margin-top: var(--space-sm);
-  font-size: 0.72rem;
-  color: rgba(248, 244, 238, 0.55);
-  max-width: 44ch;
-  line-height: 1.5;
 }
 
 /* Decorative Mondrian panel — desktop only */
@@ -1560,38 +1560,160 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
    LEGAL PAGES
    ============================================================= */
 
-.legal-page {
-  padding: var(--space-lg) var(--space-md) var(--space-xl);
+.section--legal-intro {
+  background: linear-gradient(155deg, var(--off-white) 0%, var(--white) 45%);
 }
 
-.legal-inner {
-  max-width: 42rem;
-  margin: 0 auto;
+.legal-intro-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
-.legal-inner h1 {
-  margin-bottom: 0.5rem;
+.legal-intro-header .section-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
 }
 
 .legal-updated {
-  font-size: 0.85rem;
-  color: var(--grey);
-  margin-bottom: var(--space-md);
+  margin-top: 0.15rem;
 }
 
-.legal-inner h2 {
-  margin-top: var(--space-md);
-  margin-bottom: 0.5rem;
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+.legal-intro {
+  max-width: 58ch;
+  padding-left: calc(5px + var(--space-sm));
+  border-left: 4px solid var(--blue);
+  margin-left: 0;
+  color: var(--grey-dark);
+  font-size: 1.05rem;
 }
 
-.legal-inner p,
-.legal-inner li {
-  margin-bottom: 0.75rem;
+.section--legal {
+  background: var(--off-white);
 }
 
-.legal-inner .btn {
-  margin-top: var(--space-md);
+.legal-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.legal-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.legal-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.legal-item {
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-sm);
+  border-left: 4px solid transparent;
+  border-bottom: 1px solid rgba(28, 24, 21, 0.08);
+}
+
+.legal-item:last-child {
+  border-bottom: none;
+}
+
+.legal-item--accent { border-left-color: var(--accent); }
+.legal-item--blue   { border-left-color: var(--blue); }
+.legal-item--yellow { border-left-color: var(--yellow); }
+
+.legal-item-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  margin-bottom: 0.45rem;
+  line-height: 1.4;
+}
+
+.legal-item p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--black);
+  max-width: 62ch;
+}
+
+.legal-item p + p {
+  margin-top: 0.65rem;
+}
+
+.legal-back {
+  align-self: flex-start;
+  margin-top: var(--space-sm);
+}
+
+.legal-accent-col {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .legal-layout {
+    grid-template-columns: 1fr 200px;
+    gap: var(--space-lg);
+  }
+
+  /* Bounded, framed colour composition that mirrors the About accent
+     block — sticks alongside the policy rather than stretching into a
+     full-height slab. */
+  .legal-accent-col {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2;
+    border: var(--border-lg);
+    height: clamp(360px, 60vh, 540px);
+    align-self: start;
+    position: sticky;
+    top: calc(var(--header-h) + var(--space-md));
+  }
+
+  .legal-accent-block--accent { background: var(--accent); flex: 1; }
+  .legal-accent-block--yellow { background: var(--yellow); flex: 1.7; border-top: var(--border-lg); border-bottom: var(--border-lg); }
+  .legal-accent-block--blue   { background: var(--blue);   flex: 1; }
+}
+
+/* Static nav on legal pages — no hamburger needed */
+.nav-menu--static {
+  display: flex;
+  position: static;
+  inset: auto;
+  width: auto;
+  transform: none;
+  visibility: visible;
+  background: transparent;
+  padding: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  overflow: visible;
+}
+
+.nav-menu--static .nav-link {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--white);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-menu--static .nav-link:hover,
+.nav-menu--static .nav-link:focus-visible {
+  color: var(--yellow);
+}
+
+@media (min-width: 768px) {
+  .nav-menu--static .nav-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+  }
 }
 
 

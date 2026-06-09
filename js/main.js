@@ -21,6 +21,10 @@ document.querySelectorAll('.about-item').forEach((item, i) => {
   item.classList.add(`about-item--${CYCLE[i % 3]}`);
 });
 
+document.querySelectorAll('.legal-item').forEach((item, i) => {
+  item.classList.add(`legal-item--${CYCLE[i % 3]}`);
+});
+
 
 /* --- Footer year --- */
 const yearEl = document.getElementById('year');
