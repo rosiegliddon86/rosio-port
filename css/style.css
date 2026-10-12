@@ -925,14 +925,13 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 }
 
 /* Desktop hero — three-column Mondrian layout */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .hero { display: block; }
 
   .hero-layout {
     min-height: calc(100svh - var(--header-h));
-    height: calc(100svh - var(--header-h));
     grid-template-areas: "accent content image";
-    grid-template-columns: 80px 1fr 320px;
+    grid-template-columns: 90px 1fr 380px;
     grid-template-rows: 1fr;
     padding: 0;
     gap: 0;
@@ -950,29 +949,22 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 
   .hero-content {
     grid-area: content;
-    padding: var(--space-xl) var(--space-lg);
+    padding: var(--space-lg);
     border-left: none;
     border-right: var(--border-lg);
-    gap: var(--space-md); /* more breathing room on desktop */
+    gap: var(--space-md);
   }
 
   .hero-image-wrap {
     grid-area: image;
-    /* Reset mobile fixed height — let the grid row define the height */
-    height: 100%;
+    position: relative;
+    height: auto;
     overflow: hidden;
   }
 
-  /*
-    In the CSS Grid context the image wrap fills its grid cell
-    (grid-template-rows: 1fr). height: 100% on the img then
-    fills the wrap correctly.
-  */
-}
-
-@media (min-width: 1024px) {
-  .hero-layout {
-    grid-template-columns: 90px 1fr 380px;
+  .hero-photo {
+    position: absolute;
+    inset: 0;
   }
 }
 
